@@ -9,25 +9,11 @@
 
 We've previously learned how to send a message to grandma or a pizza shop. But so far all those recipients have done is acknowledge the message by printing to standard output.
 
-Now let's make them do something more interesting by passing the message along like in a child's telephone game
+Now let's pass a message along like in a child's telephone game.
 
 [telephone3.rho](telephone3.rho)
 
-As the message says, you learn most when you experiment. So be sure to change things as you see fit.
-
-### Exercise
-
-That telephone game was fun, but it's always better the have more players. Go ahead and add a third player called Charlie. Instead of printing to `stdout`, bob will send the message along to Charlie. Then Charlie will print it to the screen. The More the Merrier!
-
-
-
-![The message never seems to get there correctly. I blame Bob.](telephoneChangedMessage.png)
-
-
-
-### Exercise
-If you've ever actually played telephone, you know that the message rarely arrives in tact. Bob decided to mix it up by passing along a false message. Change the program so Bob passes along a different message regardless of what he receives.
-
+As you can see, the message says: "How to program: Change stuff and see what happens."
 
 ## WTH is That `*`?
 
@@ -51,9 +37,6 @@ A name is something that can be used as a channel to send messages over. In most
  - `@Nil` The smallest possible name. Made by quoting the smallest possible process.
  - `@(@"Alice"!("I like rholang, pass it on."))` Made by quoting a process from our telephone game
 
-
-
-
 ## So What is `*` all about?
 
 
@@ -65,6 +48,16 @@ The big thing to remember is in rholang we <strong>send processes and receive na
 
 When Alice receives our message with `for(message <- @"Alice")` she is receiving, so `message` becomes a name. When she later sends to Bob she has to send a process, so she uses `*` to turn `message` back into a process with `@"Bob"!(*message)`
 
+### Exercise
+If you've ever actually played telephone, you know that the message rarely arrives in tact. Bob decided to mix it up by passing along a false message. Change the program so Bob passes along a different message regardless of what he receives.
+
+### Exercise
+
+That telephone game was fun, but it's always better the have more players. Go ahead and add a third player called Charlie. Instead of printing to `stdout`, bob will send the message along to Charlie. Then Charlie will print it to the screen. The More the Merrier!
+
+
+
+![The message never seems to get there correctly. I blame Bob.](telephoneChangedMessage.png)
 
 
 ## Quiz
